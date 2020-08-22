@@ -1,11 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
 import DailyIframe from '@daily-co/daily-js';
 import styled from 'styled-components';
+import { Form, Card, Button, CardDeck, CardColumns, Container, Row, Col } from 'react-bootstrap';
 
 const Notes = styled.div`
-  height: 200px;
+  display: flex;
+  height: 50vh;
   width: 100%;
-  background-color: white;
+  background-color: #fffacd;
+  border-radius: 15px;
 `;
 
 const ChosenRoom = ({ location }) => {
@@ -53,14 +56,23 @@ const ChosenRoom = ({ location }) => {
   return (
     <div>
       <h1>Room: {location.state.roomName}</h1>
-      <body>share this room: {url} </body>
-      <iframe
-        style={{ width: '100%', height: '50vh', border: 0 }}
-        title="Room"
-        ref={iframeRef}
-        allow="camera; microphone; fullscreen"
-      />
-      <Notes>notes go here</Notes>
+      <body>Share this room: {url} </body>
+      <br></br>
+      <Container>
+        <Row>
+          <Col xs={12} md={8}>
+            <iframe
+              style={{ width: '100%', height: '50vh', border: 0 }}
+              title="Room"
+              ref={iframeRef}
+              allow="camera; microphone; fullscreen"
+            />
+          </Col>
+          <Col xs={6} md={4}>
+            <Notes style={{ align: 'center', color: 'red' }}>{location.state.roomName} Notes</Notes>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
