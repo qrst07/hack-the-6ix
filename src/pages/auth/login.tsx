@@ -26,9 +26,11 @@ export default function Login() {
           <Checkbox onChange={onCheckbox}>Remember me</Checkbox>
           <Link to="/auth/request-password">Forgot Password?</Link>
         </Group>
-        <Button status="Success" type="button" shape="SemiRound" fullWidth>
-          Login
-        </Button>
+        <Link to="/dashboard">
+          <Button status="Success" type="button" shape="SemiRound" fullWidth>
+            Login
+          </Button>
+        </Link>
       </form>
       <Socials />
       <p>
