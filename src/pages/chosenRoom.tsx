@@ -1,19 +1,29 @@
 import React, { useRef, useEffect, useState } from 'react';
 import DailyIframe from '@daily-co/daily-js';
 import styled from 'styled-components';
-import { Form, Card, Button, CardDeck, CardColumns, Container, Row, Col } from 'react-bootstrap';
+import { Form, Card, Button, CardDeck, CardColumns, Container, Row, Col, Modal } from 'react-bootstrap';
 
 const Notes = styled.div`
   display: flex;
-  height: 50vh;
+  height: 44vh;
   width: 100%;
   background-color: #fffacd;
   border-radius: 15px;
 `;
 
+const AddButton = styled(Button)`
+  margin-top: 10px;
+  width: 100%;
+`;
+
 const ChosenRoom = ({ location }) => {
   const url = `https://notate.daily.co/${location.state.roomName}`;
   const [init, setInit] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const iframeRef = useRef();
   const dailyRef = useRef();
   const joinedRef = useRef();
@@ -70,9 +80,34 @@ const ChosenRoom = ({ location }) => {
           </Col>
           <Col xs={6} md={4}>
             <Notes style={{ align: 'center', color: 'red' }}>{location.state.roomName} Notes</Notes>
+            <AddButton onClick={handleShow}>Add to notes</AddButton>
           </Col>
         </Row>
       </Container>
+      <Modal show={show} onHide={handleClose} centered size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title>Add to notes</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div>How much of the session would you like to save to notes?</div>
+          <Form.Group>
+            <Form.Control as="select">
+              <option>10 minutes</option>
+              <option>30 minutes</option>
+              <option>60 minutes</option>
+              <option>All time</option>
+            </Form.Control>
+          </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save To Notes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
