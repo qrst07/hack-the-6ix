@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'OAH-Admin',
-    description: 'Admin dashboard template based on Gatsby with oah-ui component package.',
-    author: 'OAH Technology',
+    title: 'Notate',
+    description: 'Making virtual learning more seamless and accessible.',
+    author: 'Notate Team',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -26,7 +26,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'oah-admin',
-        short_name: 'OAH',
+        short_name: 'Notate',
         start_url: '/dashboard',
         display: 'minimal-ui',
         icon: 'src/images/OAH.png', // This path is relative to the root of the site.
