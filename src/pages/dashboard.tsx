@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Col from '@paljs/ui/Col';
+import Row from '@paljs/ui/Row';
 import SEO from '../components/SEO';
 import svg from '../images/undraw_online_learning_ao11.svg';
 import 'bootstrap/dist/css/bootstrap.css';
