@@ -26,18 +26,22 @@ const Home = () => {
       <br></br>
       <CardDeck>
         <Card>
-          <Card.Img variant="top" src={pic4} />
-          <Card.Body>
-            <Card.Title>Start a Call</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This content
-              is a little bit longer.
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
+          {/* wrap entire card with anchor and link page*/}
+          <a href="/rooms">
+            <Card.Img variant="top" src={pic4} />
+            <Card.Body>
+              <Card.Title>Start a Call</Card.Title>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural lead-in to additional content. This content
+                is a little bit longer.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </a>
         </Card>
+
         <Card>
           <Card.Img variant="top" src={pic2} />
           <br></br>
