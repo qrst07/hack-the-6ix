@@ -45,6 +45,7 @@ class RoomsHomepage extends React.Component {
           <h1>Join a room</h1>
         </div>
 
+
         <Row>
           <br></br>
           {loading ? <div>Loading...</div> : null}
