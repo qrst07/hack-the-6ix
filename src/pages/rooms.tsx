@@ -37,11 +37,6 @@ class RoomsHomepage extends React.Component {
   render() {
     const { loading, fetchedData } = this.state;
 
-    const entry = /rooms\/(.+)/.exec(location.pathname);
-    if (entry) {
-      return <Room id={entry[1]} key={location.pathname} />;
-    }
-
     return (
       <>
         <SEO title="Rooms Homepage" keywords={['OAH', 'application', 'react']} />

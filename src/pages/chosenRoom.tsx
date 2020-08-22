@@ -1,11 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import DailyIframe from '@daily-co/daily-js';
 import styled from 'styled-components';
+import Col from '@paljs/ui/Col';
+import Row from '@paljs/ui/Row';
 
 const Notes = styled.div`
-  height: 200px;
+  height: 100vh;
   width: 100%;
   background-color: white;
+  border-radius: 32px;
+  padding: 30px;
 `;
 
 const ChosenRoom = ({ location }) => {
@@ -21,7 +25,7 @@ const ChosenRoom = ({ location }) => {
 
   useEffect(() => {
     dailyRef.current = DailyIframe.wrap(iframeRef.current, {
-      showLeaveButton: true,
+      showLeaveButton: false,
     });
     dailyRef.current.on('left-meeting', () => {
       joinedRef.current = false;
@@ -52,15 +56,25 @@ const ChosenRoom = ({ location }) => {
 
   return (
     <div>
-      <h1>Room: {location.state.roomName}</h1>
-      <body>share this room: {url} </body>
-      <iframe
-        style={{ width: '100%', height: '50vh', border: 0 }}
-        title="Room"
-        ref={iframeRef}
-        allow="camera; microphone; fullscreen"
-      />
-      <Notes>notes go here</Notes>
+      <Row>
+        <h1>Room: {location.state.roomName}</h1>
+      </Row>
+      <Row>
+        <h6>share this room: {url} </h6>
+      </Row>
+      <Row>
+        <Col breakPoint={{ xs: 12, md: 8 }}>
+          <iframe
+            style={{ width: '100%', height: '100vh', border: 0 }}
+            title="Room"
+            ref={iframeRef}
+            allow="camera; microphone; fullscreen"
+          />
+        </Col>
+        <Col breakPoint={{ xs: 12, md: 4 }}>
+          <Notes>notes go here</Notes>
+        </Col>
+      </Row>
     </div>
   );
 };
