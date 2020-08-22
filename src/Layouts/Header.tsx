@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             {
               content: (
                 <Link to="/" className="logo">
-                  Admin Template
+                  Notate
                 </Link>
               ),
             },
