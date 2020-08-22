@@ -7,6 +7,11 @@ const items: MenuItemType[] = [
     link: { to: '/dashboard' },
   },
   {
+    title: 'Rooms',
+    icon: { name: 'home' },
+    link: { to: '/rooms' },
+  },
+  {
     title: 'FEATURES',
     group: true,
   },
