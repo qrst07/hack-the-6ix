@@ -1,5 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import DailyIframe from '@daily-co/daily-js';
+import styled from 'styled-components';
+
+const Notes = styled.div`
+  height: 200px;
+  width: 100%;
+  background-color: white;
+`;
 
 const ChosenRoom = ({ location }) => {
   const url = `https://notate.daily.co/${location.state.roomName}`;
@@ -44,12 +51,17 @@ const ChosenRoom = ({ location }) => {
   }, [url, init]);
 
   return (
-    <iframe
-      style={{ width: '100%', height: '100vh', border: 0 }}
-      title="video call iframe"
-      ref={iframeRef}
-      allow="camera; microphone; fullscreen"
-    />
+    <div>
+      <h1>Room: {location.state.roomName}</h1>
+      <body>share this room: {url} </body>
+      <iframe
+        style={{ width: '100%', height: '50vh', border: 0 }}
+        title="Room"
+        ref={iframeRef}
+        allow="camera; microphone; fullscreen"
+      />
+      <Notes>notes go here</Notes>
+    </div>
   );
 };
 
