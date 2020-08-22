@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import DailyIframe from '@daily-co/daily-js';
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { Form, Card, Button, CardDeck, CardColumns, Container, Row, Col } from 'react-bootstrap';
 
 const Notes = styled.div`
@@ -9,6 +10,17 @@ const Notes = styled.div`
   width: 100%;
   background-color: #fffacd;
   border-radius: 15px;
+=======
+import Col from '@paljs/ui/Col';
+import Row from '@paljs/ui/Row';
+
+const Notes = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  border-radius: 32px;
+  padding: 30px;
+>>>>>>> 961947a940dc8012d91492725e818428503d5841
 `;
 
 const ChosenRoom = ({ location }) => {
@@ -24,7 +36,7 @@ const ChosenRoom = ({ location }) => {
 
   useEffect(() => {
     dailyRef.current = DailyIframe.wrap(iframeRef.current, {
-      showLeaveButton: true,
+      showLeaveButton: false,
     });
     dailyRef.current.on('left-meeting', () => {
       joinedRef.current = false;
@@ -55,6 +67,7 @@ const ChosenRoom = ({ location }) => {
 
   return (
     <div>
+
       <h1>Room: {location.state.roomName}</h1>
       <body>Share this room: {url} </body>
       <br></br>
