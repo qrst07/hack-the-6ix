@@ -9,13 +9,9 @@ import SimpleLayout from './SimpleLayout';
 import SidebarCustom from './Sidebar';
 
 const LayoutPage: React.FC<{ pageContext: { layout: string } }> = ({ children, pageContext }) => {
-  const [theme, setTheme] = useState<DefaultTheme['name']>('dark');
+  const [theme, setTheme] = useState<DefaultTheme['name']>('corporate');
   const [dir, setDir] = useState<'ltr' | 'rtl'>('ltr');
   const sidebarRef = useRef<SidebarRefObject>(null);
-
-  const changeTheme = (newTheme: DefaultTheme['name']) => {
-    setTheme(newTheme);
-  };
 
   const changeDir = () => {
     const newDir = dir === 'ltr' ? 'rtl' : 'ltr';
@@ -28,12 +24,7 @@ const LayoutPage: React.FC<{ pageContext: { layout: string } }> = ({ children, p
         <SimpleLayout />
         <Layout evaIcons={icons} dir={dir} className={pageContext.layout === 'auth' ? 'auth-layout' : ''}>
           {pageContext.layout !== 'auth' && (
-            <Header
-              dir={dir}
-              changeDir={changeDir}
-              changeTheme={changeTheme}
-              toggleSidebar={() => sidebarRef.current?.toggle()}
-            />
+            <Header dir={dir} changeDir={changeDir} toggleSidebar={() => sidebarRef.current?.toggle()} />
           )}
           <LayoutContainer>
             {pageContext.layout !== 'auth' && <SidebarCustom ref={sidebarRef} />}
