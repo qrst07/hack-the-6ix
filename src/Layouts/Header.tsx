@@ -44,40 +44,12 @@ const SelectStyled = styled(Select)`
 
 interface HeaderProps {
   toggleSidebar: () => void;
-  changeTheme: (value: DefaultTheme['name']) => void;
   changeDir: () => void;
   dir: 'rtl' | 'ltr';
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
   const themeOptions = [
-    {
-      value: 'default',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#a6c1ff' }} />
-          Default
-        </Label>
-      ),
-    },
-    {
-      value: 'dark',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#192038' }} />
-          Dark
-        </Label>
-      ),
-    },
-    {
-      value: 'cosmic',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#5a37b8' }} />
-          Cosmic
-        </Label>
-      ),
-    },
     {
       value: 'corporate',
       label: (
@@ -108,38 +80,12 @@ const Header: React.FC<HeaderProps> = (props) => {
                 </Link>
               ),
             },
-            {
-              content: (
-                <SelectStyled
-                  isSearchable={false}
-                  shape="SemiRound"
-                  placeholder="Themes"
-                  options={themeOptions}
-                  onChange={({ value }: { value: DefaultTheme['name'] }) => props.changeTheme(value)}
-                />
-              ),
-            },
-            {
-              content: (
-                <Button size="Small" onClick={() => props.changeDir()}>
-                  {props.dir}
-                </Button>
-              ),
-            },
           ]}
         />
         <Actions
           size="Small"
           className="right"
           actions={[
-            {
-              icon: 'github',
-              url: { href: 'https://github.com/paljs/gatsby-admin-template', target: '_blank' },
-            },
-            {
-              icon: 'twitter',
-              url: { href: 'https://twitter.com/AhmedElywh', target: '_blank' },
-            },
             {
               content: (
                 <Location>
