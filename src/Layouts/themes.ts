@@ -11,8 +11,6 @@ const shared: Partial<DefaultTheme> = {
 
 export default function themeService(theme: DefaultTheme['name'], dir: 'ltr' | 'rtl') {
   switch (theme) {
-    case 'dark':
-    case 'cosmic':
     case 'corporate':
     default:
       return createTheme(theme, { dir, ...shared });
