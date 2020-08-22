@@ -1,49 +1,66 @@
+import React, { useState, useEffect } from 'react';
 import { Button } from '@paljs/ui/Button';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Col from '@paljs/ui/Col';
 import Row from '@paljs/ui/Row';
-import React, { useState } from 'react';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 
-const Home = () => {
-  // TEMPORARY: create room to test
-  var data = JSON.stringify({
-    name: 'testthis',
-  });
+class Home extends React.Component {
+  state = {
+    loading: true,
+    error: false,
+    fetchedData: [],
+  };
+  // // fetch all rooms
+  componentDidMount() {
+    fetch('https://api.daily.co/v1/rooms', {
+      method: 'GET',
+      headers: new Headers({
+        Authorization: `Bearer ${process.env.API_KEY}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        console.log(json);
+        this.setState({
+          fetchedData: json.data,
+          loading: false,
+        });
+      });
+  }
 
-  var xhr = new XMLHttpRequest();
+  render() {
+    const { loading, fetchedData } = this.state;
 
-  xhr.addEventListener('readystatechange', function () {
-    if (this.readyState === this.DONE) {
-      console.log(this.responseText);
-    }
-  });
-
-  xhr.open('POST', 'https://api.daily.co/v1/rooms');
-  xhr.setRequestHeader('content-type', 'application/json');
-  xhr.setRequestHeader('authorization', `Bearer ${process.env.API_KEY}`);
-
-  xhr.send(data);
-
-  // const sendRequest = () => {
-
-  // }
-
-  return (
-    <>
-      <SEO title="Home" keywords={['OAH', 'application', 'react']} />
-      <Row>
-        <Col breakPoint={{ xs: 12, md: 6 }}>
-          <Card>
-            <header>rooms</header>
-            <CardBody>
-              <Button>click</Button>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    </>
-  );
-};
+    return (
+      <>
+        <SEO title="Home" keywords={['OAH', 'application', 'react']} />
+        <Row>
+          <Col breakPoint={{ xs: 12, md: 6 }}>
+            <div>load</div>
+            {fetchedData.map((room) => (
+              <Card key={room.id}>
+                <CardBody>Room: {room.name}</CardBody>
+              </Card>
+            ))}
+          </Col>
+        </Row>
+      </>
+    );
+  }
+}
 export default Home;
+
+// export const pageQuery = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//   }
+// `

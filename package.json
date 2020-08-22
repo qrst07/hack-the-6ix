@@ -22,6 +22,7 @@
     "gatsby-plugin-styled-components": "3.3.10",
     "gatsby-plugin-typescript": "2.4.16",
     "gatsby-source-filesystem": "2.3.23",
+    "gatsby-source-graphql": "^2.7.1",
     "gatsby-transformer-sharp": "2.5.12",
     "react": "16.13.1",
     "react-dom": "16.13.1",
