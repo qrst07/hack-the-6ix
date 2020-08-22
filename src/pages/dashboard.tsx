@@ -19,6 +19,11 @@ const HomeEdit = styled.div`
   padding: 100px;
   color: white;
 `;
+
+const CardLink = styled.a`
+  text-decoration: none;
+`;
+
 const Home = () => {
   return (
     <div>
@@ -27,7 +32,7 @@ const Home = () => {
       <CardDeck>
         <Card>
           {/* wrap entire card with anchor and link page*/}
-          <a href="/rooms">
+          <CardLink href="/roomCreate">
             <Card.Img variant="top" src={pic4} />
             <Card.Body>
               <Card.Title>Start a Call</Card.Title>
@@ -36,10 +41,11 @@ const Home = () => {
                 is a little bit longer.
               </Card.Text>
             </Card.Body>
+            <br></br>
             <Card.Footer>
               <small className="text-muted">Last updated 3 mins ago</small>
             </Card.Footer>
-          </a>
+          </CardLink>
         </Card>
 
         <Card>
@@ -55,20 +61,24 @@ const Home = () => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img variant="top" src={pic3} />
-          <br></br>
-          <br></br>
-          <br></br>
-
-          <Card.Body>
-            <Card.Title>Join a Call</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in to additional content.
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
+          <CardLink href="/rooms">
+            <br></br>
+            <br></br>
+            <br></br>
+            <Card.Img variant="top" src={pic3} />
+            <Card.Body>
+              <Card.Title>Join a Call</Card.Title>
+              <Card.Text>
+                This is a wider card with supporting text below as a natural lead-in to additional content.
+              </Card.Text>
+            </Card.Body>
+            <br></br>
+            <br></br>
+            <br></br>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </CardLink>
         </Card>
       </CardDeck>
     </div>

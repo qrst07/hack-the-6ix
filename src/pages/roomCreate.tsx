@@ -58,7 +58,7 @@ const RoomCreate = () => {
           setError('');
         } else {
           setSuccess(false);
-          setError('Could not create your room. A room with that name may already exist.');
+          setError('Could not create your call. A call with that name may already exist.');
           return Promise.reject(response);
         }
       });
@@ -69,7 +69,7 @@ const RoomCreate = () => {
   return (
     <div>
       <Row>
-        <h1>Create a Room</h1>
+        <h1>Start a Call</h1>
       </Row>
       <br></br>
       <Row>
@@ -80,11 +80,11 @@ const RoomCreate = () => {
           <CreateCard>
             <Card.Body>
               <form>
-                <h6>Enter your room name:</h6>
+                <h6>Enter your call name:</h6>
                 <InputGroup>
                   <CardInput
                     type="email"
-                    placeholder="Room Name"
+                    placeholder="Call Name"
                     value={input}
                     onInput={(e) => {
                       setInput(e.target.value);
@@ -105,7 +105,7 @@ const RoomCreate = () => {
                 {error ? <ErrorText>{error}</ErrorText> : null}
                 {success ? (
                   <div>
-                    <SuccessText>Your room was successfully created!</SuccessText>
+                    <SuccessText>Your call was successfully created!</SuccessText>
                     <Link to={`/chosenRoom`} state={{ roomName: `${input}` }}>
                       Take me there
                     </Link>
