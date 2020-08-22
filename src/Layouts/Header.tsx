@@ -95,12 +95,17 @@ const Header: React.FC<HeaderProps> = (props) => {
                       placement="bottom"
                       currentPath={getPathReady(location.pathname)}
                       items={[
-                        { title: 'Profile', link: { to: '/modal-overlays/tooltip' } },
+                        { title: 'Profile', link: { to: '/profile' } },
                         { title: 'Log out', link: { to: '/logout' } },
                       ]}
                       Link={Link}
                     >
-                      <User image="url('/icons/icon-72x72.png')" name="Ahmed Elywa" title="Manger" size="Medium" />
+                      <User
+                        image="url('/icons/icon-72x72.png')"
+                        name="Calvin &amp; Hobbes"
+                        title="Boss"
+                        size="Medium"
+                      />
                     </ContextMenu>
                   )}
                 </Location>
