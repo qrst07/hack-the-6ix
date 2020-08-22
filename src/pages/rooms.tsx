@@ -39,7 +39,7 @@ class RoomsHomepage extends React.Component {
 
     return (
       <>
-        <SEO title="Rooms Homepage" keywords={['OAH', 'application', 'react']} />
+        <SEO title="Channels Homepage" keywords={['OAH', 'application', 'react']} />
         <Row>
           <Col breakPoint={{ xs: 12, md: 6 }}>
             {loading ? <div>Loading...</div> : null}
