@@ -5,7 +5,7 @@ import { Form, Card, Button, CardDeck, CardColumns, Container, Row, Col, Modal }
 
 const Notes = styled.div`
   display: flex;
-  height: 44vh;
+  height: 50vh;
   width: 100%;
   background-color: #fffacd;
   border-radius: 15px;
@@ -65,28 +65,29 @@ const ChosenRoom = ({ location }) => {
 
   return (
     <div>
-      <h1>Room: {location.state.roomName}</h1>
-      <body>Share this room: {url} </body>
+      <h1>Channel: {location.state.roomName}</h1>
+      <h6>Share this channel: {url} </h6>
       <br></br>
       <Container>
         <Row>
           <Col xs={12} md={8}>
             <iframe
               style={{ width: '100%', height: '50vh', border: 0 }}
-              title="Room"
+              title="Channel"
               ref={iframeRef}
               allow="camera; microphone; fullscreen"
             />
           </Col>
           <Col xs={6} md={4}>
             <Notes style={{ align: 'center', color: 'red' }}>{location.state.roomName} Notes</Notes>
-            <AddButton onClick={handleShow}>Add to notes</AddButton>
+            <AddButton onClick={handleShow}>Add current session to notes</AddButton>
+            <AddButton>View previous notes from this channel</AddButton>
           </Col>
         </Row>
       </Container>
       <Modal show={show} onHide={handleClose} centered size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>Add to notes</Modal.Title>
+          <Modal.Title>Add current session to notes</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div>How much of the session would you like to save to notes?</div>

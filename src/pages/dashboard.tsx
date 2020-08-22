@@ -35,7 +35,7 @@ const Home = () => {
           <CardLink href="/roomCreate">
             <Card.Img variant="top" src={pic4} />
             <Card.Body>
-              <Card.Title>Start a Call</Card.Title>
+              <Card.Title>Create a Channel</Card.Title>
               <Card.Text>
                 This is a wider card with supporting text below as a natural lead-in to additional content. This content
                 is a little bit longer.
@@ -67,7 +67,7 @@ const Home = () => {
             <br></br>
             <Card.Img variant="top" src={pic3} />
             <Card.Body>
-              <Card.Title>Join a Call</Card.Title>
+              <Card.Title>Join a Channel</Card.Title>
               <Card.Text>
                 This is a wider card with supporting text below as a natural lead-in to additional content.
               </Card.Text>
