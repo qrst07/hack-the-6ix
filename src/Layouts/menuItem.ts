@@ -17,6 +17,11 @@ const items: MenuItemType[] = [
     link: { to: '/roomCreate' },
   },
   {
+    title: 'My Notes',
+    icon: { name: 'home' },
+    link: { to: '/notesHome' },
+  },
+  {
     title: 'FEATURES',
     group: true,
   },

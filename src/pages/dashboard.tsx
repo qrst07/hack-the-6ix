@@ -49,16 +49,21 @@ const Home = () => {
         </Card>
 
         <Card>
-          <Card.Img variant="top" src={pic2} />
-          <br></br>
-          <Card.Body>
-            <Card.Title>Explore Notes</Card.Title>
+          <CardLink href="/notesHome">
+            <br></br>
+            <Card.Img variant="top" src={pic2} />
+            <br></br>
+            <Card.Body>
+              <Card.Title>Explore Notes</Card.Title>
 
-            <Card.Text>This card has supporting text below as a natural lead-in to additional content. </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
+              <Card.Text>This card has supporting text below as a natural lead-in to additional content. </Card.Text>
+            </Card.Body>
+            <br></br>
+            <br></br>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </CardLink>
         </Card>
         <Card>
           <CardLink href="/rooms">
