@@ -23,6 +23,12 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
+# Google cloud keys
+speech-to-text.json
+
+# .env
+.env.development
+
 # Bower dependency directory (https://bower.io/)
 bower_components
 
