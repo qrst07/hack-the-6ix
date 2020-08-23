@@ -71,16 +71,13 @@ const RoomCreate = () => {
       <Row>
         <h1>Start a Channel</h1>
       </Row>
-      <br></br>
       <Row>
-        <Col breakPoint={{ xs: 4 }}>
-          <CardImg src={pic4} style={{ width: '350px', height: '400px' }} />
-        </Col>
         <Col breakPoint={{ xs: 8 }}>
           <CreateCard>
+            <CardImg src={pic4} style={{ width: '220px', height: '170px' }} />
             <Card.Body>
               <form>
-                <h6>Enter your Channel name:</h6>
+                <h7>Enter your Channel name:</h7>
                 <InputGroup>
                   <CardInput
                     type="email"
