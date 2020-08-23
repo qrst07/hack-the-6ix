@@ -60,6 +60,5 @@ const startSpeech = () => {
 
 module.exports = {
   startAPI: startSpeech,
-  GOOGLE_VOICE_API_KEY: 'AIzaSyCzL-P2XxnejrMM8xnlcNK2W1PMYJTPTEo',
   speechContent: returnSpeech,
 };
