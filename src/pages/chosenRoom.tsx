@@ -29,6 +29,26 @@ const ChosenRoom = ({ location }) => {
   const dailyRef = useRef();
   const joinedRef = useRef();
 
+  async function getVoice() {
+    let response = await fetch(`/api/getVoice`);
+    let data = await response.json();
+    return data;
+  }
+
+  async function startVoice() {
+    let response = await fetch(`/api/startVoice`);
+    let data = await response.json();
+    return data;
+  }
+
+  const callBackend = () => {
+    getVoice().then((data) => console.log(data));
+  };
+
+  useEffect(() => {
+    startVoice().then((data) => console.log(data));
+  }, [url, init]);
+
   if (location && location.state && location.state.roomName && !init) {
     setInit(true);
   }
