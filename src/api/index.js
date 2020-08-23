@@ -19,5 +19,5 @@ app.get('/getVoice', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Recording has started! Listening at http://localhost:${port}`);
 });
