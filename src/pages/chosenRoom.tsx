@@ -17,9 +17,10 @@ const AddButton = styled(Button)`
 `;
 
 const ChosenRoom = ({ location }) => {
-  const url = `https://notate.daily.co/${location.state.roomName}`;
+  const url = `https://notate.daily.co/${location && location.state && location.state.roomName}`;
   const [init, setInit] = useState(false);
   const [show, setShow] = useState(false);
+  const [name, setName] = useState('');
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -28,7 +29,7 @@ const ChosenRoom = ({ location }) => {
   const dailyRef = useRef();
   const joinedRef = useRef();
 
-  if (location.state.roomName && !init) {
+  if (location && location.state && location.state.roomName && !init) {
     setInit(true);
   }
 
@@ -63,9 +64,15 @@ const ChosenRoom = ({ location }) => {
     })();
   }, [url, init]);
 
+  useEffect(() => {
+    if (location) {
+      setName(location && location.state && location.state.roomName);
+    }
+  }, [init]);
+
   return (
     <div>
-      <h1>Channel: {location.state.roomName}</h1>
+      <h1>Channel: {name}</h1>
       <h6>Share this channel: {url} </h6>
       <br></br>
       <Container>
@@ -79,7 +86,7 @@ const ChosenRoom = ({ location }) => {
             />
           </Col>
           <Col xs={6} md={4}>
-            <Notes style={{ align: 'center', color: 'red' }}>{location.state.roomName} Notes</Notes>
+            <Notes style={{ align: 'center', color: 'red' }}>{name} Notes</Notes>
             <AddButton onClick={handleShow}>Add current session to notes</AddButton>
             <AddButton>View previous notes from this channel</AddButton>
           </Col>
