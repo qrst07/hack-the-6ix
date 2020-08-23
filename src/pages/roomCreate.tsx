@@ -74,7 +74,7 @@ const RoomCreate = () => {
       <br></br>
       <Row>
         <Col breakPoint={{ xs: 4 }}>
-          <CardImg src={pic4} />
+          <CardImg src={pic4} style={{ width: '350px', height: '400px' }} />
         </Col>
         <Col breakPoint={{ xs: 8 }}>
           <CreateCard>

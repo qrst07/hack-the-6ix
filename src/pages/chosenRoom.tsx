@@ -86,7 +86,7 @@ const ChosenRoom = ({ location }) => {
             />
           </Col>
           <Col xs={6} md={4}>
-            <Notes style={{ align: 'center', color: 'red' }}>{name} Notes</Notes>
+            <Notes style={{ color: 'black' }}>{name} Notes</Notes>
             <AddButton onClick={handleShow}>Add current session to notes</AddButton>
             <AddButton>View previous notes from this channel</AddButton>
           </Col>
