@@ -5,7 +5,8 @@ import SEO from '../components/SEO';
 import svg from '../images/undraw_online_learning_ao11.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import pic5 from '../images/notes_pic.png';
-
+import pic6 from '../images/h8at73ud6zf41.jpg';
+import pic7 from '../images/61d73-trig-equations5.jpg';
 import styled from 'styled-components';
 import { Form, Card, Button, Tabs, Accordion, Dropdown, Modal } from 'react-bootstrap';
 
@@ -48,12 +49,28 @@ const Notes = () => {
         </Card>
         <Card>
           <Accordion.Toggle as={Card.Header} eventKey="1">
-            Trig
+            Trigonometry
             <br></br>
             Created on: 06/05/20
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="1">
-            <Card.Body></Card.Body>
+            <Card.Body>
+              <img src={pic6} />
+              <br></br>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+        <Card>
+          <Accordion.Toggle as={Card.Header} eventKey="1">
+            Linear Algebra
+            <br></br>
+            Created on: 06/05/20
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="1">
+            <Card.Body>
+              <img src={pic7} />
+              <br></br>
+            </Card.Body>
           </Accordion.Collapse>
         </Card>
         <Card>
@@ -63,17 +80,10 @@ const Notes = () => {
             Created on: 06/05/20
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="1">
-            <Card.Body></Card.Body>
-          </Accordion.Collapse>
-        </Card>
-        <Card>
-          <Accordion.Toggle as={Card.Header} eventKey="1">
-            Algebra
-            <br></br>
-            Created on: 06/05/20
-          </Accordion.Toggle>
-          <Accordion.Collapse eventKey="1">
-            <Card.Body></Card.Body>
+            <Card.Body>
+              <img src={pic5} />
+              <br></br>
+            </Card.Body>
           </Accordion.Collapse>
         </Card>
       </Accordion>
