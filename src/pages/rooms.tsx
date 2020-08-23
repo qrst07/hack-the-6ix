@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import img from '../images/Google_Meet_1.max-2000x2000.png';
 import Col from '@paljs/ui/Col';
 import Row from '@paljs/ui/Row';
 import styled from 'styled-components';
@@ -42,34 +42,36 @@ class RoomsHomepage extends React.Component {
       <>
         <SEO title="Rooms Homepage" keywords={['OAH', 'application', 'react']} />
         <div>
-          <h1>Join a room</h1>
+          <h1>Join a room 📚</h1>
         </div>
-
 
         <Row>
           <br></br>
           {loading ? <div>Loading...</div> : null}
           {fetchedData.map((room) => (
-            <Card style={{ width: '20rem' }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>{room.name}</Card.Title>
-                <Card.Text>
-                  Learn more about {room.name}
-                  <br></br>
-                  <br></br>
-                  <Button variant="primary">
-                    <Link
-                      to={`/chosenRoom`}
-                      style={{ textDecoration: 'none', color: 'white' }}
-                      state={{ roomName: `${room.name}` }}
-                    >
-                      Click here
-                    </Link>
-                  </Button>
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <div style={{ padding: '30px' }}>
+              <Card style={{ width: '30rem', padding: '100 px' }}>
+                <Card.Img variant="top" src={img} />
+                <Card.Body>
+                  <Card.Title>{room.name}</Card.Title>
+                  <Card.Text>
+                    Learn more about {room.name}
+                    <br></br>
+                    <br></br>
+                    <Button variant="primary">
+                      <Link
+                        to={`/chosenRoom`}
+                        style={{ textDecoration: 'none', color: 'white' }}
+                        state={{ roomName: `${room.name}` }}
+                      >
+                        Join Live
+                      </Link>
+                    </Button>
+                  </Card.Text>
+                </Card.Body>
+                <br></br>
+              </Card>
+            </div>
           ))}
         </Row>
       </>

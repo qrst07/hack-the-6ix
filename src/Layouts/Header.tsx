@@ -11,7 +11,7 @@ import User from '@paljs/ui/User';
 import { getPathReady } from './Sidebar';
 import { Location } from '@reach/router';
 import { breakpointDown } from '@paljs/ui/breakpoints';
-
+import teamLogo from '../images/118214809_302380157663530_5844143322821461235_n.jpg';
 const HeaderStyle = styled.div`
   display: flex;
   width: 100%;
@@ -77,6 +77,7 @@ const Header: React.FC<HeaderProps> = (props) => {
               content: (
                 <Link to="/" className="logo">
                   Notate
+                  <img src={teamLogo} style={{ width: '70px', height: '50px' }} />
                 </Link>
               ),
             },
@@ -100,7 +101,12 @@ const Header: React.FC<HeaderProps> = (props) => {
                       ]}
                       Link={Link}
                     >
-                      <User image="url('/icons/icon-72x72.png')" name="Ahmed Elywa" title="Manger" size="Medium" />
+                      <User
+                        image="url('/icons/icon-72x72.png')"
+                        name="Wilson Parker"
+                        title="AP High School Student"
+                        size="Medium"
+                      />
                     </ContextMenu>
                   )}
                 </Location>

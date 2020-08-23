@@ -35,28 +35,14 @@ const Notes = () => {
       <Accordion defaultActiveKey="0">
         <Card>
           <Accordion.Toggle as={Card.Header} eventKey="0">
-            Trig
+            Trigonometry
             <br></br>
             Created on: 05/05/20
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-              Speaker 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <br></br>
-              Speaker 2: Donec convallis, nunc vehicula tristique sagittis, lectus magna auctor purus, non volutpat erat
-              ligula pharetra est.
-              <br></br>
-              Speaker 1: Etiam porta, diam id lobortis imperdiet
               <img src={pic5} />
               <br></br>
-              Speaker 3: dui tellus vestibulum odio, at mollis neque est at ligula. Quisque sagittis, enim id cursus
-              tristique, lacus sapien congue mi, sed vehicula lectus eros in ante. Etiam urna ex, ullamcorper ut dui
-              non, facilisis venenatis orci. Fusce tincidunt, elit non sodales accumsan, felis nisi maximus augue, a
-              aliquet lectus nunc pretium elit. Sed eu dui eget enim ornare luctus et tempus ante. Maecenas tincidunt
-              augue vel dui efficitur, vel consectetur odio laoreet. Quisque ut enim interdum, condimentum mi id,
-              fringilla elit. Curabitur eu mauris varius, venenatis mauris euismod, bibendum mauris. In hendrerit
-              laoreet ante id suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-              turpis egestas. In sed diam et metus porttitor pharetra
             </Card.Body>
           </Accordion.Collapse>
         </Card>
