@@ -1,4 +1,4 @@
-# hack-the-6ix
+# Notate
 ## Inspiration
 As a group of university students from across North America, COVID-19 has put into perspective the uncertainty and instability that comes with online education. To ease this transition, we were inspired to create Notate — an unparalleled speech-to-text transcription platform backed by the power of Google Cloud’s Machine Learning algorithms. Although our team has come from different walks of life, we easily related to each others’ values for accessibility, equality, and education.
 
@@ -11,10 +11,9 @@ To build our app: `gatsby develop`
 To run temporarily: http://213e9fd78c37.ngrok.io
 Note: video calling does not work through ngrok - if you'd like to test it out, build our app!
 
-## to use speech-to-text, a google cloud api key is needed
-## from your service account, get the json with the api keys and place it in a file called speech-to-text.json
-
-## to run the speech-to-text api on express: from this directory, run `node src/api/index.js`
+- To use speech-to-text, a Google Cloud API key is needed
+- From your service account, get the json with the api keys and place it in a file called speech-to-text.json
+- To run the speech-to-text api on express: from this directory, run `node src/api/index.js`
 
 
 ## How we built it
