@@ -19,6 +19,11 @@ const HomeEdit = styled.div`
   padding: 100px;
   color: white;
 `;
+
+const CardLink = styled.a`
+  text-decoration: none;
+`;
+
 const Home = () => {
   return (
     <div>
@@ -26,45 +31,47 @@ const Home = () => {
       <br></br>
       <CardDeck>
         <Card>
-          <Card.Img variant="top" src={pic4} />
-          <Card.Body>
-            <Card.Title>Start a Call</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This content
-              is a little bit longer.
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
+          {/* wrap entire card with anchor and link page*/}
+          <CardLink href="/roomCreate">
+            <Card.Img variant="top" src={pic4} />
+            <Card.Body>
+              <Card.Title>Create a Channel ⚡</Card.Title>
+              <Card.Text>
+                Start a Channel and connect with your friends and million other students in real time!
+              </Card.Text>
+            </Card.Body>
+            <br></br>
+          </CardLink>
+        </Card>
+
+        <Card>
+          <CardLink href="/notesHome">
+            <br></br>
+            <Card.Img variant="top" src={pic2} />
+            <br></br>
+            <Card.Body>
+              <Card.Title>Explore Notes 📝</Card.Title>
+
+              <Card.Text> View thousands of transcribed lectures and notes from students across the world</Card.Text>
+            </Card.Body>
+            <br></br>
+            <br></br>
+          </CardLink>
         </Card>
         <Card>
-          <Card.Img variant="top" src={pic2} />
-          <br></br>
-          <Card.Body>
-            <Card.Title>Explore Notes</Card.Title>
-
-            <Card.Text>This card has supporting text below as a natural lead-in to additional content. </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Img variant="top" src={pic3} />
-          <br></br>
-          <br></br>
-          <br></br>
-
-          <Card.Body>
-            <Card.Title>Join a Call</Card.Title>
-            <Card.Text>
-              This is a wider card with supporting text below as a natural lead-in to additional content.
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
+          <CardLink href="/rooms">
+            <br></br>
+            <br></br>
+            <br></br>
+            <Card.Img variant="top" src={pic3} />
+            <Card.Body>
+              <Card.Title>Join a Channel🌀</Card.Title>
+              <Card.Text>Browse from our extensive list of channels covering many subjects</Card.Text>
+            </Card.Body>
+            <br></br>
+            <br></br>
+            <br></br>
+          </CardLink>
         </Card>
       </CardDeck>
     </div>

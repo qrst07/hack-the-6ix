@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@paljs/ui/Button';
-import { Card, CardBody } from '@paljs/ui/Card';
+import img from '../images/Google_Meet_1.max-2000x2000.png';
 import Col from '@paljs/ui/Col';
 import Row from '@paljs/ui/Row';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import { Link } from 'gatsby';
-
+import { Form, Card, Button, CardDeck } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+const rowStyle = { backgroundColor: '#c8e6c9', height: '70px', padding: '5px 0' };
 class RoomsHomepage extends React.Component {
   state = {
     loading: true,
@@ -37,29 +38,41 @@ class RoomsHomepage extends React.Component {
   render() {
     const { loading, fetchedData } = this.state;
 
-    const entry = /rooms\/(.+)/.exec(location.pathname);
-    if (entry) {
-      return <Room id={entry[1]} key={location.pathname} />;
-    }
-
     return (
       <>
         <SEO title="Rooms Homepage" keywords={['OAH', 'application', 'react']} />
+        <div>
+          <h1>Join a room 📚</h1>
+        </div>
+
         <Row>
-          <Col breakPoint={{ xs: 12, md: 6 }}>
-            {loading ? <div>Loading...</div> : null}
-            <div>JOIN A ROOM</div>
-            {fetchedData.map((room) => (
-              <Card key={room.id}>
-                <CardBody>
-                  <div>Room: {room.name}</div>
-                  <Link to={`/chosenRoom`} state={{ roomName: `${room.name}` }}>
-                    click to open
-                  </Link>
-                </CardBody>
+          <br></br>
+          {loading ? <div>Loading...</div> : null}
+          {fetchedData.map((room) => (
+            <div style={{ padding: '30px' }}>
+              <Card style={{ width: '30rem', padding: '100 px' }}>
+                <Card.Img variant="top" src={img} />
+                <Card.Body>
+                  <Card.Title>{room.name}</Card.Title>
+                  <Card.Text>
+                    Learn more about {room.name}
+                    <br></br>
+                    <br></br>
+                    <Button variant="primary">
+                      <Link
+                        to={`/chosenRoom`}
+                        style={{ textDecoration: 'none', color: 'white' }}
+                        state={{ roomName: `${room.name}` }}
+                      >
+                        Join Live
+                      </Link>
+                    </Button>
+                  </Card.Text>
+                </Card.Body>
+                <br></br>
               </Card>
-            ))}
-          </Col>
+            </div>
+          ))}
         </Row>
       </>
     );
