@@ -9,7 +9,7 @@ Notate is a multi-user web conferencing app which allows for students to create 
 ## Running/installing dependencies
 To build our app: `gatsby develop`
 
-To run temporarily: http://213e9fd78c37.ngrok.io
+To run temporarily: http://f1378179ca39.ngrok.io/
 You can create your own channels, and join live calls! (ngrok only supports dial-in calls, not video. build our app to test out video!)
 
 - To use speech-to-text, a Google Cloud API key is needed
