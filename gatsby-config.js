@@ -1,3 +1,9 @@
+module.exports = {
+  proxy: {
+    prefix: '/api',
+    url: 'http://localhost:3000',
+  },
+};
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });

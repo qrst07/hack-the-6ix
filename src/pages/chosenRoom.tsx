@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import DailyIframe from '@daily-co/daily-js';
 import styled from 'styled-components';
+import { Button } from 'react-bootstrap';
 
 const Notes = styled.div`
   height: 200px;
@@ -14,6 +15,26 @@ const ChosenRoom = ({ location }) => {
   const iframeRef = useRef();
   const dailyRef = useRef();
   const joinedRef = useRef();
+
+  async function getVoice() {
+    let response = await fetch(`/api/getVoice`);
+    let data = await response.json();
+    return data;
+  }
+
+  async function startVoice() {
+    let response = await fetch(`/api/startVoice`);
+    let data = await response.json();
+    return data;
+  }
+
+  const callBackend = () => {
+    getVoice().then((data) => console.log(data));
+  };
+
+  useEffect(() => {
+    startVoice().then((data) => console.log(data));
+  }, [url, init]);
 
   if (location.state.roomName && !init) {
     setInit(true);
@@ -61,6 +82,13 @@ const ChosenRoom = ({ location }) => {
         allow="camera; microphone; fullscreen"
       />
       <Notes>notes go here</Notes>
+      <Button
+        onClick={() => {
+          callBackend();
+        }}
+      >
+        click
+      </Button>
     </div>
   );
 };
