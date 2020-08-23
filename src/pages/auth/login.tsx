@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 import Auth, { Group } from '../../components/Auth';
 import Socials from '../../components/Auth/Socials';
 import SEO from '../../components/SEO';
-import pic1 from '/Users/keso/hack-the-6ix/src/images/118214809_302380157663530_5844143322821461235_n.jpg';
+import pic1 from '../../images/118214809_302380157663530_5844143322821461235_n.jpg';
 export default function Login() {
   const onCheckbox = () => {
     // v will be true or false
