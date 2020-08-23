@@ -1,4 +1,5 @@
 # Notate
+Notate is a multi-user video calling app which leverages ML algorithms and Google APIs in realtime to enhance remote learning by connecting students worldwide and creating a smart hub for notes.
 ## Inspiration
 As a group of university students from across North America, COVID-19 has put into perspective the uncertainty and instability that comes with online education. To ease this transition, we were inspired to create Notate — an unparalleled speech-to-text transcription platform backed by the power of Google Cloud’s Machine Learning algorithms. Although our team has come from different walks of life, we easily related to each others’ values for accessibility, equality, and education.
 
@@ -12,6 +13,7 @@ To run temporarily: http://213e9fd78c37.ngrok.io
 You can create your own channels, and join live calls! (ngrok only supports dial-in calls, not video. build our app to test out video!)
 
 - To use speech-to-text, a Google Cloud API key is needed
+- API_KEY = 839bf48c7b5eda6169a5c51be0631cac0e4343e5da64786f886284f46a8d9c93
 - From your service account, get the json with the api keys and place it in a file called speech-to-text.json
 - To run the speech-to-text api on express: from this directory, run `node src/api/index.js`
 
