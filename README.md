@@ -9,7 +9,7 @@ Notate is a multi-user web conferencing app which allows for students to create 
 To build our app: `gatsby develop`
 
 To run temporarily: http://213e9fd78c37.ngrok.io
-Note: video calling does not work through ngrok - if you'd like to test it out, build our app!
+You can create your own channels, and join live calls! (ngrok only supports dial-in calls, not video. build our app to test out video!)
 
 - To use speech-to-text, a Google Cloud API key is needed
 - From your service account, get the json with the api keys and place it in a file called speech-to-text.json
